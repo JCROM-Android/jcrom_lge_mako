@@ -1,10 +1,11 @@
 #!/bin/bash
-echo wait a few minutes.
-tar zxf occam-jop40c-factory-cd3dc140.tgz
-cd occam-jop40c
-unzip image-occam-jop40c.zip
+echo "Download and Deodexing... Please wait."
+wget -nc -q https://dl.google.com/dl/android/aosp/occam-jop40d-factory-ca7602f0.tgz
+tar zxf occam-jop40d-factory-ca7602f0.tgz
+cd occam-jop40d
+unzip image-occam-jop40d.zip
 cd ../
-./simg2img occam-jop40c/system.img system.ext4.img
+./simg2img occam-jop40d/system.img system.ext4.img
 mkdir system
 mkdir tmp
 sudo mount -o loop -t ext4 system.ext4.img tmp
@@ -16,6 +17,8 @@ mkdir -p system/vendor/lib/drm
 mkdir -p system/vendor/firmware/discretix
 mkdir -p system/bin
 mkdir -p system/media/video
+cp -a tmp/lib/liblightcycle.so system/lib/liblightcycle.so
+cp -a tmp/lib/libjni_mosaic.so system/lib/libjni_mosaic.so
 cp -a tmp/lib/libchromatix_vx6953_preview.so system/lib/libchromatix_vx6953_preview.so
 cp -a tmp/lib/libchromatix_ov5647_preview.so system/lib/libchromatix_ov5647_preview.so
 cp -a tmp/lib/libqmi_csi.so system/lib/libqmi_csi.so
@@ -191,6 +194,6 @@ cp -a tmp/media/PFFprec_600.emd system/media/PFFprec_600.emd
 cp -a tmp/media/bootanimation.zip system/media/bootanimation.zip
 sudo umount tmp
 rm -rf tmp
-rm -rf occam-jop40c
+rm -rf occam-jop40d
 rm system.ext4.img
 

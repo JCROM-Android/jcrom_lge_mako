@@ -176,7 +176,9 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/proprietary/system/media/PFFprec_600.emd:system/media/PFFprec_600.emd \
 	$(LOCAL_PATH)/proprietary/system/media/bootanimation.zip:system/media/bootanimation.zip \
 	$(LOCAL_PATH)/proprietary/wcd9310_anc.bin:system/etc/firmware/wcd9310/wcd9310_anc.bin \
-	$(LOCAL_PATH)/proprietary/wcd9310_mbhc.bin:system/etc/firmware/wcd9310/wcd9310_mbhc.bin
+	$(LOCAL_PATH)/proprietary/wcd9310_mbhc.bin:system/etc/firmware/wcd9310/wcd9310_mbhc.bin \
+	$(LOCAL_PATH)/proprietary/system/lib/libjni_mosaic.so:system/lib/libjni_mosaic.so \
+	$(LOCAL_PATH)/proprietary/system/lib/liblightcycle.so:system/lib/liblightcycle.so
 
 $(call inherit-product-if-exists, frameworks/base/data/sounds/AudioPackage10.mk)
 
