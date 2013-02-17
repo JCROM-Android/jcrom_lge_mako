@@ -19,7 +19,6 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/proprietary/system/bin/mpdecision:system/bin/mpdecision \
 	$(LOCAL_PATH)/proprietary/system/bin/netmgrd:system/bin/netmgrd \
 	$(LOCAL_PATH)/proprietary/system/bin/nl_listener:system/bin/nl_listener \
-	$(LOCAL_PATH)/proprietary/system/bin/PktRspTest:system/bin/PktRspTest \
 	$(LOCAL_PATH)/proprietary/system/bin/port-bridge:system/bin/port-bridge \
 	$(LOCAL_PATH)/proprietary/system/bin/qcks:system/bin/qcks \
 	$(LOCAL_PATH)/proprietary/system/bin/qmuxd:system/bin/qmuxd \
@@ -27,12 +26,6 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/proprietary/system/bin/radish:system/bin/radish \
 	$(LOCAL_PATH)/proprietary/system/bin/rmt_storage:system/bin/rmt_storage \
 	$(LOCAL_PATH)/proprietary/system/bin/sensors.qcom:system/bin/sensors.qcom \
-	$(LOCAL_PATH)/proprietary/system/bin/sns_cm_conc_test:system/bin/sns_cm_conc_test \
-	$(LOCAL_PATH)/proprietary/system/bin/sns_cm_test:system/bin/sns_cm_test \
-	$(LOCAL_PATH)/proprietary/system/bin/sns_debug_file_test:system/bin/sns_debug_file_test \
-	$(LOCAL_PATH)/proprietary/system/bin/sns_dsps_tc0001:system/bin/sns_dsps_tc0001 \
-	$(LOCAL_PATH)/proprietary/system/bin/sns_smr_loopback_test:system/bin/sns_smr_loopback_test \
-	$(LOCAL_PATH)/proprietary/system/bin/test_diag:system/bin/test_diag \
 	$(LOCAL_PATH)/proprietary/system/bin/thermald:system/bin/thermald \
 	$(LOCAL_PATH)/proprietary/system/bin/usbhub:system/bin/usbhub \
 	$(LOCAL_PATH)/proprietary/system/bin/usbhub_init:system/bin/usbhub_init \
@@ -152,11 +145,11 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/proprietary/system/lib/libsc-a3xx.so:system/lib/libsc-a3xx.so \
 	$(LOCAL_PATH)/proprietary/system/lib/libsensor1.so:system/lib/libsensor1.so \
 	$(LOCAL_PATH)/proprietary/system/lib/libsensor_reg.so:system/lib/libsensor_reg.so \
-	$(LOCAL_PATH)/proprietary/system/lib/libsensor_test.so:system/lib/libsensor_test.so \
 	$(LOCAL_PATH)/proprietary/system/lib/libsensor_user_cal.so:system/lib/libsensor_user_cal.so \
 	$(LOCAL_PATH)/proprietary/system/lib/libstagefright_hdcp.so:system/lib/libstagefright_hdcp.so \
 	$(LOCAL_PATH)/proprietary/system/lib/libxml.so:system/lib/libxml.so \
 	$(LOCAL_PATH)/proprietary/system/lib/lib_dlb_msd.so:system/lib/lib_dlb_msd.so \
+	$(LOCAL_PATH)/proprietary/system/lib/libgoggles_clientvision.so:system/lib/libgoggles_clientvision.so \
 	$(LOCAL_PATH)/proprietary/system/vendor/firmware/bcm2079x_firmware.ncd:system/vendor/firmware/bcm2079x_firmware.ncd \
 	$(LOCAL_PATH)/proprietary/system/vendor/firmware/bcm2079x_pre_firmware.ncd:system/vendor/firmware/bcm2079x_pre_firmware.ncd \
 	$(LOCAL_PATH)/proprietary/system/vendor/firmware/discretix/dxhdcp2.b00:system/vendor/firmware/discretix/dxhdcp2.b00 \
@@ -179,7 +172,14 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/proprietary/wcd9310_anc.bin:system/etc/firmware/wcd9310/wcd9310_anc.bin \
 	$(LOCAL_PATH)/proprietary/wcd9310_mbhc.bin:system/etc/firmware/wcd9310/wcd9310_mbhc.bin \
 	$(LOCAL_PATH)/proprietary/system/lib/libjni_mosaic.so:system/lib/libjni_mosaic.so \
-	$(LOCAL_PATH)/proprietary/system/lib/liblightcycle.so:system/lib/liblightcycle.so
+	$(LOCAL_PATH)/proprietary/system/lib/liblightcycle.so:system/lib/liblightcycle.so \
+	$(LOCAL_PATH)/proprietary/system/vendor/firmware/keymaster/keymaster.b00:system/vendor/firmware/keymaster/keymaster.b00 \
+	$(LOCAL_PATH)/proprietary/system/vendor/firmware/keymaster/keymaster.b01:system/vendor/firmware/keymaster/keymaster.b01 \
+	$(LOCAL_PATH)/proprietary/system/vendor/firmware/keymaster/keymaster.b02:system/vendor/firmware/keymaster/keymaster.b02 \
+	$(LOCAL_PATH)/proprietary/system/vendor/firmware/keymaster/keymaster.b03:system/vendor/firmware/keymaster/keymaster.b03 \
+	$(LOCAL_PATH)/proprietary/system/vendor/firmware/keymaster/keymaster.mdt:system/vendor/firmware/keymaster/keymaster.mdt \
+	$(LOCAL_PATH)/proprietary/system/lib/hw/audio_policy.msm8960.so:system/lib/hw/audio_policy.msm8960.so \
+	$(LOCAL_PATH)/proprietary/system/lib/hw/keystore.msm8960.so:system/lib/hw/keystore.msm8960.so
 
 $(call inherit-product-if-exists, frameworks/base/data/sounds/AudioPackage10.mk)
 
