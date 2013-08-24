@@ -1,11 +1,11 @@
 #!/bin/bash
 echo "Download and Deodexing... Please wait."
-wget -nc -q https://dl.google.com/dl/android/aosp/occam-jwr66v-factory-08d2b697.tgz
-tar zxf occam-jwr66v-factory-08d2b697.tgz
-cd occam-jwr66v
-unzip image-occam-jwr66v.zip
+wget -nc -q https://dl.google.com/dl/android/aosp/occam-jwr66y-factory-74b1deab.tgz
+tar zxf occam-jwr66y-factory-74b1deab.tgz
+cd occam-jwr66y
+unzip image-occam-jwr66y.zip
 cd ../
-./simg2img occam-jwr66v/system.img system.ext4.img
+./simg2img occam-jwr66y/system.img system.ext4.img
 mkdir system
 mkdir tmp
 sudo mount -o loop -t ext4 system.ext4.img tmp
@@ -62,6 +62,6 @@ cp -a tmp/vendor/lib/libfrsdk.so system/vendor/lib/libfrsdk.so
 
 sudo umount tmp
 rm -rf tmp
-rm -rf occam-jwr66v
+rm -rf occam-jwr66y
 rm system.ext4.img
 
