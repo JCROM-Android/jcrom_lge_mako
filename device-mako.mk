@@ -4,6 +4,13 @@ PRODUCT_PACKAGES += \
     Browser \
     Gallery2
 
+PRODUCT_PROPERTY_OVERRIDES += persist.sys.voice.capable=true
+PRODUCT_PROPERTY_OVERRIDES += persist.sys.sms.capable=true
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.ui.phone=320 \
+    persist.sys.ui.tablet=192
+
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/proprietary/system/vendor/etc/audio_effects.conf:system/vendor/etc/audio_effects.conf \
 	$(LOCAL_PATH)/proprietary/system/vendor/firmware/discretix/dxhdcp2.b00:system/vendor/firmware/discretix/dxhdcp2.b00 \
