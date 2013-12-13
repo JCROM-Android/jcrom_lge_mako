@@ -1,11 +1,11 @@
 #!/bin/bash
 echo "Download and Deodexing... Please wait."
-wget -nc -q https://dl.google.com/dl/android/aosp/occam-krt16s-factory-2006f418.tgz
-tar zxf occam-krt16s-factory-2006f418.tgz
-cd occam-krt16s
-unzip image-occam-krt16s.zip
+wget -nc -q https://dl.google.com/dl/android/aosp/occam-kot49h-factory-02e344de.tgz
+tar zxf occam-kot49h-factory-02e344de.tgz
+cd occam-kot49h
+unzip image-occam-kot49h.zip
 cd ../
-./simg2img occam-krt16s/system.img system.ext4.img
+./simg2img occam-kot49h/system.img system.ext4.img
 mkdir system
 mkdir tmp
 sudo mount -o loop -t ext4 system.ext4.img tmp
@@ -45,6 +45,6 @@ cp -a tmp/media/audio/ringtones/SpagnolaOrchestration.ogg system/media/audio/rin
 
 sudo umount tmp
 rm -rf tmp
-rm -rf occam-krt16s
+rm -rf occam-kot49h
 rm system.ext4.img
 
