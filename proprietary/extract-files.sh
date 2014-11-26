@@ -1,15 +1,19 @@
 #!/bin/bash
-echo "Please wait."
-wget -nc -q https://dl.google.com/dl/android/aosp/occam-ktu84p-factory-b6ac3ad6.tgz
-tar zxf occam-ktu84p-factory-b6ac3ad6.tgz
-cd occam-ktu84p
-unzip image-occam-ktu84p.zip
+echo "Please wait..."
+wget -nc -q https://dl.google.com/dl/android/aosp/occam-lrx21t-factory-51cee750.tgz
+tar zxf occam-lrx21t-factory-51cee750.tgz
+rm occam-lrx21t-factory-51cee750.tgz
+cd occam-lrx21t
+unzip image-occam-lrx21t.zip
 cd ../
-./simg2img occam-ktu84p/system.img system.ext4.img
+./simg2img occam-lrx21t/system.img system.ext4.img
 mkdir system
 mkdir tmp
 sudo mount -o loop -t ext4 system.ext4.img tmp
 sync
+mkdir -p system/etc/preferred-apps
+mkdir -p system/etc/sysconfig
+mkdir -p system/etc/updatecmds
 mkdir -p system/lib/soundfx
 mkdir -p system/vendor/etc
 mkdir -p system/vendor/firmware/discretix
@@ -20,6 +24,10 @@ mkdir -p system/bin
 mkdir -p system/etc
 mkdir -p system/media/audio/ringtones
 
+cp -a tmp/etc/preferred-apps/google.xml system/etc/preferred-apps/google.xml
+cp -a tmp/etc/sysconfig/google.xml system/etc/sysconfig/google.xml
+cp -a tmp/etc/sysconfig/google_build.xml system/etc/sysconfig/google_build.xml
+cp -a tmp/etc/updatecmds/google_generic_update.txt system/etc/updatecmds/google_generic_update.txt
 cp -a tmp/vendor/etc/audio_effects.conf system/vendor/etc/audio_effects.conf
 cp -a tmp/vendor/firmware/discretix/dxhdcp2.b00 system/vendor/firmware/discretix/dxhdcp2.b00
 cp -a tmp/vendor/firmware/discretix/dxhdcp2.b01 system/vendor/firmware/discretix/dxhdcp2.b01
@@ -32,6 +40,7 @@ cp -a tmp/vendor/lib/libWVStreamControlAPI_L1.so system/vendor/lib/libWVStreamCo
 cp -a tmp/vendor/lib/libfrsdk.so system/vendor/lib/libfrsdk.so
 cp -a tmp/vendor/lib/libwvdrm_L1.so system/vendor/lib/libwvdrm_L1.so
 cp -a tmp/vendor/lib/libwvm.so system/vendor/lib/libwvm.so
+cp -a tmp/vendor/lib/libWVphoneAPI.so system/vendor/lib/libWVphoneAPI.so
 cp -a tmp/vendor/media/LMspeed_508.emd system/vendor/media/LMspeed_508.emd
 cp -a tmp/vendor/media/PFFprec_600.emd system/vendor/media/PFFprec_600.emd
 cp -a tmp/bin/mm-qcamera-app system/bin/mm-qcamera-app
@@ -39,16 +48,15 @@ cp -a tmp/etc/DxHDCP.cfg system/etc/DxHDCP.cfg
 cp -a tmp/etc/audio_effects.conf system/etc/audio_effects.conf
 cp -a tmp/lib/libDxHdcp.so system/lib/libDxHdcp.so
 cp -a tmp/lib/soundfx/libfmas.so system/lib/soundfx/libfmas.so
-cp -a tmp/lib/libgcastv2_base.so system/lib/libgcastv2_base.so
-cp -a tmp/lib/libgcastv2_support.so system/lib/libgcastv2_support.so
-cp -a tmp/lib/libjgcastservice.so system/lib/libjgcastservice.so
 cp -a tmp/lib/libjhead.so system/lib/libjhead.so
 cp -a tmp/lib/libjhead_jni.so system/lib/libjhead_jni.so
-cp -a tmp/media/bootanimation.zip system/media/bootanimation.zip
+cp -a tmp/lib/librefocus.so system/lib/librefocus.so
+cp -a tmp/lib/libvcdecoder_jni.so system/lib/libvcdecoder_jni.so
+cp -a tmp/lib/libvorbisencoder.so system/lib/libvorbisencoder.so
 cp -a tmp/media/audio/ringtones/RobotsforEveryone.ogg system/media/audio/ringtones/RobotsforEveryone.ogg
 cp -a tmp/media/audio/ringtones/SpagnolaOrchestration.ogg system/media/audio/ringtones/SpagnolaOrchestration.ogg
 
 sudo umount tmp
 rm -rf tmp
-rm -rf occam-ktu84p
+rm -rf occam-lrx21t
 rm system.ext4.img
