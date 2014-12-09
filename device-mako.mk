@@ -8,6 +8,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.ui.tablet=192 \
     persist.sys.ui.phablet=268
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.ui.select=0
+
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/proprietary/system/etc/preferred-apps/google.xml:system/etc/preferred-apps/google.xml:lge \
 	$(LOCAL_PATH)/proprietary/system/etc/sysconfig/google.xml:system/etc/sysconfig/google.xml:lge \
