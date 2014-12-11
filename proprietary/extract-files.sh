@@ -1,12 +1,12 @@
 #!/bin/bash
 echo "Please wait..."
-wget -nc -q https://dl.google.com/dl/android/aosp/occam-lrx21t-factory-51cee750.tgz
-tar zxf occam-lrx21t-factory-51cee750.tgz
-rm occam-lrx21t-factory-51cee750.tgz
-cd occam-lrx21t
-unzip image-occam-lrx21t.zip
+wget -nc -q https://dl.google.com/dl/android/aosp/occam-lrx22c-factory-86c04af6.tgz
+tar zxf occam-lrx22c-factory-86c04af6.tgz
+rm occam-lrx22c-factory-86c04af6.tgz
+cd occam-lrx22c
+unzip image-occam-lrx22c.zip
 cd ../
-./simg2img occam-lrx21t/system.img system.ext4.img
+./simg2img occam-lrx22c/system.img system.ext4.img
 mkdir system
 mkdir tmp
 sudo mount -o loop -t ext4 system.ext4.img tmp
@@ -58,5 +58,5 @@ cp -a tmp/media/audio/ringtones/SpagnolaOrchestration.ogg system/media/audio/rin
 
 sudo umount tmp
 rm -rf tmp
-rm -rf occam-lrx21t
+rm -rf occam-lrx22c
 rm system.ext4.img
